@@ -1,0 +1,3 @@
+class FizzbuzzSingle
+	
+end
