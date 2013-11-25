@@ -29,10 +29,25 @@ describe FizzbuzzSingle do
 		
 		it "returns FizzBuzz if passed a number divisable by both 3 and 5" do
 			@fizzy_single.do_it(30).should eq("FizzBuzz")
-		end 
+		end
+		
+		it "should raise an error if it isn't passed a number" do
+			expect{@fizzy_single.do_it("fifteen")}.to raise_error
+		end
+		
+		it "should rais an error if it is passed a negitive number" do
+			expect{@fizzy_single.do_it(-5)}.to raise_error
+		end
+		
 	end
 	
 end
 
-describe fizzbuzz do
-	describe ""
+describe Fizzbuzz do
+	describe "#new" do
+		it "Creates the Object" do
+			Fizzbuzz.new.should be_an_instance_of Fizzbuzz
+		end
+	end
+end
+
