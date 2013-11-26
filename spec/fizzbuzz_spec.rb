@@ -35,8 +35,12 @@ describe FizzbuzzSingle do
 			expect{@fizzy_single.do_it("fifteen")}.to raise_error
 		end
 		
-		it "should rais an error if it is passed a negitive number" do
+		it "should raise an error if it is passed a negitive number" do
 			expect{@fizzy_single.do_it(-5)}.to raise_error
+		end
+		
+		it "should raise an error if passed nil" do
+			expect{@fizzy_single.do_it()}.to raise_error
 		end
 		
 	end
@@ -44,10 +48,22 @@ describe FizzbuzzSingle do
 end
 
 describe Fizzbuzz do
+	before do
+		@fizzy = Fizzbuzz.new(15)
+	end
+	
 	describe "#new" do
 		it "Creates the Object" do
-			Fizzbuzz.new.should be_an_instance_of Fizzbuzz
+			@fizzy.should be_an_instance_of Fizzbuzz
 		end
 	end
+	
+	describe "to_a" do
+		it "Should return the exact array" do
+			@fizzy.to_a.should eq(["1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz","11","Fizz","13","14","FizzBuzz"])
+		end
+	end
+		
+	
 end
 
