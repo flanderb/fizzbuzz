@@ -42,27 +42,30 @@ describe FizzbuzzSingle do
 		it "should raise an error if passed nil" do
 			expect{@fizzy_single.do_it()}.to raise_error
 		end
-		
 	end
 	
 end
 
 describe Fizzbuzz do
 	before do
-		@fizzy = Fizzbuzz.new(15)
+		
 	end
 	
 	describe "#new" do
 		it "Creates the Object" do
-			@fizzy.should be_an_instance_of Fizzbuzz
+			fizzy = Fizzbuzz.new(15)
+			fizzy.should be_an_instance_of Fizzbuzz
 		end
 	end
 	
 	describe "to_a" do
-		it "Should return the exact array" do
-			@fizzy.to_a.should eq(["1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz","11","Fizz","13","14","FizzBuzz"])
+		it "Should return the exact array for 15" do
+			fizzy = Fizzbuzz.new(15)
+			fizzy.to_a.should eq(["1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz","11","Fizz","13","14","FizzBuzz"])
 		end
 	end
+	
+	describe "describe "
 		
 	
 end
